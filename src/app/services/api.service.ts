@@ -9,8 +9,8 @@ import { of } from 'rxjs';
 
 export class ApiService {
 
-  //private baseUrl = 'http://localhost:8080';
-  private baseUrl = 'http://localhost:3000';
+  private baseUrl = 'http://localhost:8080';
+ 
   //private baseUrl = '/api/v1';
 
   constructor(private http: HttpClient) { }
@@ -24,8 +24,7 @@ export class ApiService {
   }
 
   post(url: string, body: any) {
-    //return this.http.get(this.composeUrl(url), body);
-    return this.http.get(this.composeUrl(url));
+    return this.http.post(this.composeUrl(url), body);
   }
 
   put(url: string, body: any) {

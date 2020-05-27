@@ -41,12 +41,6 @@ export class LoginComponent implements OnInit {
       .subscribe(
         res => {
           if (res.code == 0) {
-            //set admin to role ADMIN
-            if (val.username=="admin") {
-              res.data.Authorization.sub="admin";
-              res.data.Authorization.roles[0] = "ADMIN";
-            }
-            
             this.authService.setSession(res);
             this.router.navigateByUrl('/index');
           } else  {
